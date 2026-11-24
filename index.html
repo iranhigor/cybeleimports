@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f7f3">
+  <meta name="description" content="Essência: uma jornada de autoconhecimento em 15 perguntas. Explore seus padrões e descubra seu arquétipo emocional.">
+  <title>Essência — Descubra quem você realmente é</title>
+  <link rel="stylesheet" href="style.css?v=5">
+</head>
+<body>
+  <div class="wrap">
+    <header class="header">
+      <button class="brand" id="brand" aria-label="Essência, início">
+        <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><ellipse cx="16" cy="16" rx="7" ry="14" stroke="currentColor" stroke-width="1.2" transform="rotate(45 16 16)"/><ellipse cx="16" cy="16" rx="7" ry="14" stroke="currentColor" stroke-width="1.2" transform="rotate(-45 16 16)"/></svg>essência<span style="color:var(--accent)">.</span>
+      </button>
+      <div class="header-right"><span class="edition">Um teste sobre o seu jeito de ser</span><button class="quiet-button" id="about-button">Como funciona</button></div>
+    </header>
+    <div class="header-rule"></div>
+    <main id="main">
+      <section class="view" id="home" aria-labelledby="home-title">
+        <div class="home-grid">
+          <div class="home-copy">
+            <p class="eyebrow">Quatro temperamentos. Muitas formas de ser.</p>
+            <h1 id="home-title">O que faz você<br>ser <em>você?</em></h1>
+            <p class="intro">Tem o seu jeito de amar, de decidir, de encarar um dia difícil. Vamos olhar para isso com um pouco mais de calma?</p>
+            <button class="primary" id="start-button">Vamos descobrir <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.6"/></svg></button>
+            <div class="small-meta"><span>15 perguntas</span><span>Uns 4 minutos</span><span>No seu ritmo</span></div>
+            <button class="restore" id="restore-button" hidden>Ver meu último resultado</button>
+          </div>
+          <div class="hero-art" aria-label="Bing Bong, de Divertida Mente" role="img">
+            <img class="hero-character" data-character="f" alt="" fetchpriority="high"><span class="art-note">Bing Bong, de Divertida Mente</span>
+            <div class="character-strip"><div class="strip-caption">Alegria · Tristeza · Raiva · Bing Bong<br><span>Quatro associações para refletir sobre seu jeito.</span></div></div>
+          </div>
+        </div>
+        <div class="home-bottom"><div><strong>Responda pensando em como você costuma agir.</strong><br><span>É uma conversa para refletir, não uma avaliação psicológica.</span></div><div class="bottom-motto">Pode ser que você se surpreenda.</div></div>
+      </section>
+
+      <section class="view" id="quiz" hidden aria-labelledby="question-title">
+        <div class="quiz-shell">
+          <div class="quiz-top"><span id="chapter-label">01 — Seu mundo interior</span><span><strong id="question-count">01</strong> / 15</span></div>
+          <div class="progress" id="progress" role="progressbar" aria-label="Perguntas respondidas" aria-valuemin="0" aria-valuemax="15" aria-valuenow="0"><div class="progress-fill" id="progress-fill"></div></div>
+          <div class="step-dots" id="step-dots" aria-hidden="true"></div><div class="question-block" id="question-block"><p class="question-category" id="question-category"></p><h2 class="question-title" id="question-title" tabindex="-1"></h2><p class="question-help">Não precisa combinar com tudo. Escolha a opção mais próxima do seu jeito.</p><fieldset class="answers" id="answers"><legend class="sr-only">Selecione uma resposta</legend></fieldset></div>
+          <div class="quiz-actions"><button class="back" id="back-button"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 12H5m6-6-6 6 6 6" stroke="currentColor" stroke-width="1.6"/></svg>Voltar</button><button class="primary" id="next-button" disabled><span id="next-label">Continuar</span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.6"/></svg></button></div>
+          <p class="quiz-hint">Atalhos: A–D ou 1–4 para escolher · Enter para continuar</p><p class="quiz-foot">Pode responder sem tentar acertar.</p>
+        </div>
+      </section>
+
+      <section class="view reveal" id="reveal" hidden aria-labelledby="reveal-title"><div class="reveal-inner"><div class="reveal-orb" aria-hidden="true"></div><h2 id="reveal-title" tabindex="-1">Pronto.<br><em>Olha quem veio te conhecer.</em></h2><p>Um pouco do seu jeito, em forma de personagem.</p><div class="reveal-track" aria-hidden="true"></div></div></section>
+
+      <section class="view result" id="result" hidden aria-labelledby="result-title">
+        <div class="result-header"><p class="eyebrow">Pelo que você contou, tem muito de...</p><h2 id="result-title" tabindex="-1"></h2><p class="result-subtitle" id="result-subtitle"></p></div>
+        <div class="result-stage"><div id="media-status" class="media-status" role="status" aria-live="polite" hidden><strong id="media-status-title"></strong><p id="media-status-text"></p></div><video id="result-video" playsinline muted loop controls preload="auto" aria-label="Animação do personagem"></video><img id="result-character" alt="" hidden></div><div class="character-introduction" aria-labelledby="character-name">
+          <p class="character-kicker">Seu personagem</p>
+          <h3 class="character-name" id="character-name"></h3>
+          <p class="character-film">Divertida Mente</p>
+          <p class="character-greeting" id="character-greeting"></p>
+        </div><div class="wave-controls"><button id="replay-wave" type="button">Ver o aceno de novo</button><button id="pause-wave" type="button">Pausar vídeo</button><a id="media-source" target="_blank" rel="noopener noreferrer" hidden>Ver animação na origem</a></div>
+        <div class="result-intro"><div class="profile-tag" id="profile-tag"></div><h3 class="result-quote" id="result-quote"></h3><p class="profile-summary" id="profile-summary"></p><div class="profile-switcher" id="profile-switcher" hidden aria-label="Explorar temperamentos empatados"></div></div>
+        <div class="results-body">
+          <div class="composition"><div><p class="section-kicker">Como suas respostas se dividiram</p><h3>Ninguém é uma coisa só.</h3><p>Esses números mostram as escolhas que você fez hoje. Em outras fases da vida, suas respostas podem mudar.</p></div><div class="chart" id="chart" role="img" aria-label="Distribuição dos quatro temperamentos"></div></div>
+          <div class="detail-grid" id="details"></div>
+          <div class="result-actions"><button class="primary" id="download-button"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M4 15v6h16v-6" stroke="currentColor" stroke-width="1.5"/></svg><span>Guardar meu cartão</span></button><button class="secondary" id="share-button"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 16V3m-4 4 4-4 4 4M7 10H4v11h16V10h-3" stroke="currentColor" stroke-width="1.5"/></svg>Compartilhar</button></div>
+          <div class="restart-row"><button class="quiet-button" id="restart-button">Refazer teste</button><button class="quiet-button" id="forget-button">Apagar resultado salvo</button></div>
+          <p class="result-note" id="save-note"></p>
+        </div>
+      </section>
+    </main>
+    <footer class="footer"><span>ESSÊNCIA © <span id="year"></span><br>Um pouco mais sobre você.</span><em>Feito para responder no seu tempo.</em></footer>
+  </div>
+  <dialog id="about-dialog" aria-labelledby="about-title"><button class="close-modal" data-close>Fechar ×</button><h2 id="about-title">Antes de começar,<br><em>vale saber.</em></h2><p>Essência usa os quatro temperamentos como uma linguagem simbólica para refletir sobre atitudes, relações e emoções.</p><p>Este questionário autoral não é um instrumento psicológico validado e não oferece diagnóstico. Os personagens de Divertida Mente são usados aqui como metáforas criativas. A associação com temperamentos é uma proposta deste teste, não uma classificação do filme. Esta é uma experiência independente, sem vínculo com Disney ou Pixar.</p><p><strong>Como calculamos:</strong> cada uma das 15 escolhas vale um ponto para um temperamento. As porcentagens são arredondadas e somam 100%. Em caso de empate, apresentamos um perfil combinado, sem inventar um vencedor.</p><p><strong>Sua privacidade:</strong> o teste funciona no próprio navegador. O resultado é salvo neste dispositivo, quando o armazenamento está disponível. Suas respostas e os vídeos ficam neste navegador. Nada é enviado a um servidor durante o teste. Os links de fonte só são abertos se você clicar neles. Compartilhar é uma escolha sua.</p><button class="primary" data-close>Entendi</button></dialog>
+  <dialog id="share-dialog" aria-labelledby="share-title"><button class="close-modal" data-close>Fechar ×</button><h2 id="share-title">Gostou de se reconhecer?<br><em>Compartilhe.</em></h2><p>Copie o texto abaixo ou baixe seu cartão para compartilhar.</p><textarea id="share-text" readonly aria-label="Texto do resultado para compartilhar"></textarea><button class="primary" id="copy-button">Copiar texto</button></dialog>
+  <dialog id="leave-dialog" aria-labelledby="leave-title"><button class="close-modal" data-close>Continuar respondendo ×</button><h2 id="leave-title">Voltar ao início?</h2><p>Suas respostas desta rodada serão descartadas. Um resultado anterior salvo continuará disponível.</p><button class="primary" id="leave-confirm">Voltar ao início</button></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <noscript><p style="padding:24px;text-align:center">Ative o JavaScript no navegador para realizar o teste Essência.</p></noscript>
+  <script src="script.js?v=5" defer></script>
+</body>
+</html>
